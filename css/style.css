@@ -1,0 +1,1607 @@
+/* ========================================================================
+   ---------ШРИФТЫ---------------------------------------------------------
+   ======================================================================== */
+@font-face {
+  font-family: 'Muller';
+  src: url('../fonts/MullerBold.woff2') format('woff2'),
+    url('../fonts/MullerBold.woff') format('woff');
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('../fonts/MullerRegular.woff2') format('woff2'),
+    url('../fonts/MullerRegular.woff') format('woff');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('../fonts/MullerMedium.woff2') format('woff2'),
+    url('../fonts/MullerMedium.woff') format('woff');
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('../fonts/MullerLight.woff2') format('woff2'),
+    url('../fonts/MullerLight.woff') format('woff');
+  font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+/* ========================================================================
+   ---------ОБЩЕЕ----------------------------------------------------------
+   ======================================================================== */
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+  width: 7px; /* ширина для вертикального скролла */
+  height: 8px; /* высота для горизонтального скролла */
+  background-color: transparent;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: var(--main-color);
+}
+
+/* Стрелки */
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+  color: transparent;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+  color: transparent;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement {
+  color: transparent;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+  color: transparent;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+html {
+  font-family: 'Muller', sans-serif;
+
+  scroll-behavior: smooth;
+}
+
+.h2 {
+  margin: 0px;
+  margin-left: 40px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+
+  color: #333333;
+}
+
+
+/* :root */
+:root {
+  --main-color: #cc9933;
+  --hover-color: #e9c479;
+  --active-color: #a47312;
+}
+
+
+/* ========================================================================
+   --------UI-KIT---------------------------------------------------------
+   ======================================================================== */
+/* link */
+.link:focus {
+  outline: 1px solid var(--main-color);
+  outline-offset: 5px;
+}
+
+.link:focus
+span,
+h3 {
+  color: var(--main-color);
+}
+
+
+/* btn */
+.btn:hover,
+.btn:focus {
+  background: var(--main-color);
+  color: #fff;
+  outline: none;
+
+  transition-property: background, color;
+  transition-duration: .3s;
+}
+
+.btn:active {
+  background: var(--active-color);
+  color: #fff;
+
+  transition-property: background, color;
+  transition-duration: .3s;
+}
+
+
+/* tel */
+.tel:not(:hover),
+.tel:not(:active) {
+  transition: color .3s;
+}
+
+.tel:hover {
+  color: var(--main-color);
+
+  transition: color .3s;
+}
+
+.tel:focus {
+  outline: 1px solid var(--main-color);
+  outline-offset: 5px;
+}
+
+.tel:focus .sct-header-telspan-left {
+  color: var(--main-color);
+}
+
+.tel:active {
+  color: var(--active-color);
+
+  transition: color .3s;
+}
+
+
+/* privat-area */
+.privat-area:hover {
+  background-image: url(../img/svg/personal-area/arrow-back-hover.svg);
+  color: var(--hover-color);
+
+  transition-property: background-image, color;
+  transition-duration: .3s;
+}
+
+.privat-area:not(:hover) {
+  transition-property: background-image, color;
+  transition-duration: .3s;
+}
+
+.privat-area:focus {
+  outline: 1px solid var(--main-color);
+  outline-offset: 5px;
+}
+
+
+/* mail */
+.mail:hover {
+  color: var(--hover-color);
+
+  transition: color .3s;
+}
+
+.mail:focus {
+  color: var(--main-color);
+  outline: 1px solid var(--main-color);
+  outline-offset: 5px;
+}
+
+.mail:active {
+  color: var(--active-color);
+
+  transition: color .3s;
+}
+
+.mail:not(:hover),
+.mail:not(:active) {
+  transition: color .3s;
+}
+
+
+/* menu */
+.menu:hover {
+  color: var(--main-color);
+
+  transition: color.3s;
+}
+
+.menu:focus {
+  outline: 1px solid var(--main-color);
+  outline-offset: 5px;
+}
+
+.menu:focus .sct-header-toolbar-spanlink-left {
+  color: var(--main-color);
+}
+
+.menu:active {
+  color: var(--active-color);
+
+  transition: color .3s;
+}
+
+
+/* cards-offer */
+.card-offer:focus {
+  outline: 1px solid var(--main-color);
+  outline-offset: 5px;
+}
+
+.card-offer:active .more {
+  color: #fff;
+
+  transition: color .3s;
+}
+
+
+/* cards-services */
+.card-services:hover .heading {
+  color: var(--hover-color);
+  background-image: url(../img/svg/services/arrow-more-light.svg);
+
+  transition-property: color, background-image;
+  transition-duration: .3s;
+}
+
+.card-services:active .heading {
+  color: var(--active-color);
+
+  transition: color .3s;
+}
+
+.card-services:not(:hover) .heading {
+  transition-property: color, background-image;
+  transition-duration: .3s;
+}
+
+
+/* icon */
+.icon:hover,
+.icon:focus .icon path {
+  fill: var(--main-color);
+
+  transition: fill .3s;
+}
+
+.icon:active .icon path {
+  fill: var(--active-color);;
+
+  transition: fill .3s;
+}
+
+
+/* ========================================================================
+   --------ОБЩИЕ СТИЛИ-----------------------------------------------------
+   ======================================================================== */
+.btn {
+  font-weight: 400;
+  color: var(--main-color);
+  padding: 13px 20px;
+  border: 1px groove var(--main-color);
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition-property: color, background;
+  transition-duration: .3s;
+}
+
+
+/* ========================================================================
+   --------КОНТЕЙНЕР-------------------------------------------------------
+   ======================================================================== */
+.container {
+  max-width: 1199px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+
+/* ========================================================================
+   --------ХЕДЕР-----------------------------------------------------------
+   ======================================================================== */
+.sct-header {
+  padding-top: 30px;
+  padding-bottom: 69px;
+}
+
+
+/* ========================================================================
+   --------ХЕДЕР СВЕРХУ----------------------------------------------------
+   ======================================================================== */
+.sct-header-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+
+/* ========================================================================
+   --------ХЕДЕР СЛЕВА-----------------------------------------------------
+   ======================================================================== */
+.sct-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.sct-header-lagoona-left {
+  margin-right: 40px;
+}
+
+.sct-header-tel-left {
+  text-decoration: none;
+}
+
+.sct-header-telspan-left {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  
+  color: #666666;
+}
+
+
+/* ========================================================================
+   --------ХЕДЕР СПРАВА----------------------------------------------------
+   ======================================================================== */
+.sct-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.sct-header-privatearea-right {
+  text-decoration: none;
+}
+
+.sct-header-spanpa-right {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+
+  padding-left: 28px;
+
+  background-image: url(../img/svg/personal-area/arrow-back.svg);
+  background-repeat: no-repeat;
+  background-size: 21px;
+  background-position-y: 12.49%;
+  background-position-x: left;
+
+  color: var(--main-color);
+}
+
+
+/* ========================================================================
+   --------ХЕДЕР ТУЛБАР----------------------------------------------------
+   ======================================================================== */
+.sct-header-toolbar {
+  display: flex;
+
+  border-top: 10px solid white;
+  border-bottom: 10px solid white;
+  border-left: 45px solid white;
+  border-right: 45px solid white;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.sct-header-toolbar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  background-color: #fff;
+}
+
+
+/* ========================================================================
+   --------ТУЛБАР СЛЕВА----------------------------------------------------
+   ======================================================================== */
+.sct-header-toolbar-navlist-left {
+  display: flex;
+  align-items: center;
+}
+
+.sct-header-toolbar-nav-item-left {
+  text-decoration: none;
+}
+
+.sct-header-toolbar-nav-item-left:not(:last-child) {
+  margin-right: 46px; 
+}
+
+.sct-header-toolbar-nav-link-left {
+  text-decoration: none;
+}
+
+.sct-header-toolbar-spanlink-left {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+
+  color: #666666;
+}
+
+
+/* ========================================================================
+   --------ПОЛОСКА---------------------------------------------------------
+   ======================================================================== */
+.sct-header-toolbar-line {
+  width: 1px;
+  height: 50px;
+  
+  background-color: #e1e1e1;
+}
+
+
+/* ========================================================================
+   --------ТУЛБАР СПРАВА---------------------------------------------------
+   ======================================================================== */
+.sct-header-toolbar-navlist-right {
+  display: flex;
+  align-items: center;
+}
+
+.sct-header-toolbar-nav-item-right {
+  text-decoration: none;
+}
+
+.sct-header-toolbar-nav-item-right:not(:last-child) {
+  margin-right: 40px;
+}
+
+.sct-header-toolbar-nav-link-right:focus {
+  outline: none;
+}
+
+.sct-header-toolbar-nav-link-right:focus .sct-header-toolbar-spanlink-right {
+  background: var(--main-color);
+  color: #fff;
+  outline: none;
+
+  transition-property: background, color;
+  transition-duration: .3s;
+}
+
+.sct-header-toolbar-spanlink-right {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+
+  color: var(--main-color);
+
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border: 1px groove var(--main-color);
+  border-radius: 10px;
+}
+
+
+/* ========================================================================
+   --------СЕКЦИЯ "СПЕЦПРЕДЛОЖНИЕЯ"----------------------------------------
+   ======================================================================== */
+.sct-offers {
+  padding-bottom: 69px;
+}
+
+.sct-offers-heading {
+  margin-bottom: 18px;
+}
+
+.sct-offers-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/* ========================================================================
+   --------ЛЕВАЯ ЧАСТЬ-----------------------------------------------------
+   ======================================================================== */
+.sct-offers-first {
+  display: flex;
+  flex-direction: column;
+
+  margin-right: 23px;
+}
+
+.sct-offers-first-item-content {
+  margin-left: 40px;
+}
+
+.sct-offers-first-item-top {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 573px;
+  min-height: 258px;
+
+  margin-bottom: 23px;
+
+  border-radius: 15px;
+
+  background-image: url(../img/bildbord/bildbord_mayami.png);
+}
+
+.gradient {
+  height: 100%;
+
+  background: linear-gradient(90deg, rgba(48, 64, 89, 0.84) -2.9%, rgba(53, 65, 83, 0) 65.7%);
+  border-radius: 15px;
+}
+
+.gradient2 {
+  height: 100%;
+
+  background: linear-gradient(0deg, rgba(48, 64, 89, 0.84) -2.9%, rgba(53, 65, 83, 0) 65.7%);
+  border-radius: 15px;
+}
+
+.sct-offers-first-item-bottom {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 573px;
+  min-height: 258px;
+
+  border-radius: 15px;
+
+  background-image: url(../img/bildbord/bildbord_krit.png);;
+}
+
+.sct-offers-first-h3 {
+  margin: 0;
+  margin-top: 40px;
+  margin-bottom: 15px;
+
+  max-width: 300px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1;
+
+  color: white;
+}
+
+.sct-offers-first-price {
+  display: block;
+
+  margin-top: 0;
+  margin-bottom: 41px;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+
+  color: white;
+
+  opacity: 0.8;
+}
+
+.sct-offers-first-more {
+  display: inline-block;
+
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 16px;
+
+  padding-right: 16px;
+
+  background-image: url(../img/svg/more/arrow-more.svg);
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: center;
+
+  color: #FFCC66;
+}
+
+
+/* ========================================================================
+   --------ПРАВАЯ ЧАСТЬ----------------------------------------------------
+   ======================================================================== */
+.sct-offers-second {
+  display: flex;
+  flex-direction: column;
+}
+
+.sct-offers-second-item-content {
+  margin-left: 40px;
+}
+
+.sct-offers-second-item {
+  display: flex;
+  flex-direction: column;
+
+  width: 573px;
+  min-height: 540px;
+
+  border-radius: 15px;
+
+  background-image: url(../img/bildbord/bildbord.png);
+}
+
+.sct-offers-second-h3 {
+  margin: 0;
+  margin-top: 213px;
+  margin-bottom: 12px;
+
+  max-width: 300px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 60px;
+
+  color: white;
+}
+
+.sct-offers-second-price {
+  display: block;
+
+  margin-top: 0;
+  margin-bottom: 45px;
+
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 300;
+
+  color: white;
+
+  opacity: 0.8;
+}
+
+.sct-offers-second-more {
+  display: inline-block;
+
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 16px;
+
+  padding-right: 16px;
+
+  background-image: url(../img/svg/more/arrow-more.svg);
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: center;
+
+  color: #FFCC66;
+}
+
+
+
+
+/* ========================================================================
+   --------СЕКЦИЯ "О НАС"--------------------------------------------------
+   ======================================================================== */
+.sct-about-us {
+  padding-bottom: 60px;
+}
+
+.sct-about-us-heading {
+  margin-bottom: 10px;
+}
+
+.sct-about-us-text {
+  margin: 0;
+
+  max-width: 888px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 200%;
+
+  color: #000000;
+}
+
+
+
+
+/* ========================================================================
+   --------СЕКЦИЯ "УСЛУГИ"-------------------------------------------------
+   ======================================================================== */
+.sct-services {
+  padding-bottom: 70px;
+}
+
+.sct-services-heading {
+  margin-bottom: 20px;
+}
+
+.sct-services-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sct-services-item {
+  padding-bottom: 36px;
+
+  max-width: 585px;
+
+  border-radius: 15px;
+
+  background-color: #fff;
+}
+
+.sct-services-item:not(:nth-child(n+3)) {
+  margin-bottom: 23px;
+}
+
+.sct-services-item:not(:nth-child(2n)) {
+  margin-right: 23px;
+}
+
+.sct-services-bild {
+  margin-bottom: 31px;
+}
+
+.sct-services-item-content {
+  margin-left: 45px;
+}
+
+.sct-services-link {
+  text-decoration: none;
+}
+
+.sct-services-h3 {
+  display: inline-block;
+
+  margin: 0;
+  margin-bottom: 8px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+
+  padding-right: 17px;
+
+  background-image: url(../img/svg/services/arrow-more2.svg);
+  background-repeat: no-repeat;
+  background-position: right center;
+
+  color: var(--main-color);
+}
+
+.sct-services-text {
+  margin: 0;
+
+  max-width: 400px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 200%;
+
+  color: #000000;
+}
+
+
+
+
+/* ========================================================================
+   --------СЕКЦИЯ "ПРЕИМУЩЕСТВА"-------------------------------------------
+   ======================================================================== */
+.sct-advantages {
+  padding-bottom: 70px;
+}
+
+.sct-advantages-heading {
+  margin-bottom: 30px;
+}
+
+.sct-advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sct-advantages-item {
+  min-width: 275px;
+  min-height: 275px;
+
+  border-radius: 15px;
+
+  background-color: #fff;
+}
+
+.sct-advantages-item:not(:nth-child(n+5)) {
+  margin-bottom: 23px;
+}
+
+.sct-advantages-item:not(:nth-child(4n)) {
+  margin-right: 23px;
+}
+
+.sct-advantages-svg {
+  width: 64px;
+  height: 66px;
+
+  margin-left: 45px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.sct-advantages-text {
+  max-width: 188px;
+
+  margin: 0;
+  margin-left: 45px;  
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 200%;
+
+  color: #000000;
+}
+
+
+
+
+/* ========================================================================
+   --------СЕКЦИЯ "ПРЕИМУЩЕСТВА"-------------------------------------------
+   ======================================================================== */
+.sct-placement {
+  padding-bottom: 70px;
+}
+
+.sct-placement-heading {
+  margin-bottom: 30px;
+}
+
+/* ========================================================================
+   --------КАРТОЧКИ--------------------------------------------------------
+   ======================================================================== */
+.sct-placement-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sct-placement-item {
+  min-width: 372px;
+  min-height: 440px;
+
+  border-radius: 15px;
+
+  background-color: #fff;
+}
+
+.sct-placement-item:not(:nth-child(n+7)) {
+  margin-bottom: 23px;
+}
+
+.sct-placement-item:not(:nth-child(3n)) {
+  margin-right: 23px;
+}
+
+.sct-placement-item:nth-child(9) {
+  background-image: url(../img/bildbord/bildbord_placement.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.sct-placement-content {
+  margin-left: 45px;
+}
+
+.sct-placement-bild {
+  display: block;
+}
+
+.sct-placement-content-price {
+  display: inline-block;
+
+  margin-top: 35px;
+  margin-bottom: 16px;
+}
+
+.sct-placement-price1 {
+  display: inline-block;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+
+  color: #999;
+}
+
+.sct-placement-price2 {
+  display: inline-block;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 16px;
+
+  color: #000;
+}
+
+.sct-placement-price3 {
+  display: inline-block;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+
+  color: #000;
+}
+
+.sct-placement-content-star {
+  display: inline-block;
+
+  margin-left: 45px;
+}
+
+.sct-placement-star {
+  margin-right: 1px;
+}
+
+.sct-placement-hotel {
+  display: block;
+
+  margin-bottom: 16px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+
+  color: #000000;
+}
+
+.sct-placement-geo {
+  display: block;
+
+  margin-bottom: 20px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+
+  color: #999999;
+}
+
+.sct-placement-btn {
+  display: inline-block;
+
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border: 1px groove var(--main-color);
+  border-radius: 15px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+
+  color: var(--main-color);
+}
+
+.sct-placement-more {
+  display: inline-block;
+  position: relative;
+
+  margin-top: 373px;
+  margin-left: 54px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 200%;
+
+  padding-right: 16px;
+
+  background-image: url(../img/svg/placement/arrow-more.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: right center;
+
+  color: #fff;
+}
+
+.sct-placement-more::before {
+  content: '';
+  position: absolute;
+  left: -54px;
+  top: -373px;
+  min-width: 372px;
+  min-height: 440px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+
+/* ========================================================================
+   --------CЕКЦИЯ "ХОЧУ ТУР"-----------------------------------------------
+   ======================================================================== */
+.sct-tour {
+  padding-bottom: 70px;
+}
+
+.sct-tour-container {
+  padding: 38px 45px 71px 45px;
+
+  background: #E9E9E9;
+  border-radius: 15px;
+}
+
+.sct-tour-heading {
+  margin-bottom: 19px;
+}
+
+
+/* ========================================================================
+   --------ФОРМА-----------------------------------------------------------
+   ======================================================================== */
+.sct-tour-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-right: auto;
+  margin-left: auto;
+
+  max-width: 1080px;
+  border: 29px solid white;
+
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+/* ========================================================================
+   --------ГОРОД ВЫЛЕТА----------------------------------------------------
+   ======================================================================== */
+.sct-tour-fieldset-city {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+
+  max-width: 169px;
+  width: 100%;
+}
+
+.sct-tour-legend-city {
+  margin-left: 5px;
+  margin-bottom: 12px;
+
+  font-weight: 400;
+  font-size: 12px;
+  color: #000;  
+}
+
+.sct-tour-select-city {
+  border: none;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+  outline: none;
+}
+
+.sct-tour-select-city:not([multiple]) {
+  padding-right: 16px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 0.25em) 0.35em;
+  background-image: url("../img/svg/tour/arrow-down.svg");
+}
+
+.sct-tour-option-city {
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+}
+
+
+/* ========================================================================
+   --------СТРАНА----------------------------------------------------------
+   ======================================================================== */
+.sct-tour-fieldset-country {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+
+  max-width: 169px;
+  width: 100%;
+}
+
+.sct-tour-legend-country {
+  margin-left: 5px;
+  margin-bottom: 12px;
+
+  font-weight: 400;
+  font-size: 12px;
+  color: #000;
+}
+
+.sct-tour-select-country {
+  border: none;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+  outline: none;
+}
+
+.sct-tour-select-country:not([multiple]) {
+  padding-right: 65px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 0.25em) 0.35em;
+  background-image: url("../img/svg/tour/arrow-down.svg");
+}
+
+.sct-tour-option-country {
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+}
+
+
+/* ========================================================================
+   --------ДАТА ПРИЛЕТА----------------------------------------------------
+   ======================================================================== */
+.sct-tour-fieldset-date {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+
+  width: 120px;
+}
+
+.sct-tour-legend-date {
+  margin-bottom: 12px;
+  margin-left: 3px;
+
+  font-weight: 400;
+  font-size: 12px;
+  color: #000;  
+}
+
+.sct-tour-input-date[type=date]::-webkit-calendar-picker-indicator {
+  padding: 0;
+  padding-right: 12px;
+  margin: 0;
+  width: 15px;
+  background-position: 12px;
+  transform: translateY(-0.5px);
+}
+
+
+/* ========================================================================
+   --------КОЛИЧЕСТВО НОЧЕЙ------------------------------------------------
+   ======================================================================== */
+.sct-tour-fieldset-nights {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+
+  width: 121px;
+
+  border-bottom: 1px solid #ccc;
+}
+
+.sct-tour-legend-nights {
+  margin-left: 1px;
+  margin-bottom: 12px;
+
+  font-weight: 400;
+  font-size: 12px;
+  color: #000;
+}
+
+.sct-tour-input-nights {
+  width: 121px;
+}
+
+
+/* ========================================================================
+   --------ТУРИСТЫ---------------------------------------------------------
+   ======================================================================== */
+.sct-tour-fieldset-tourists {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+
+  border-bottom: 1px solid #ccc;
+
+  margin-right: 10px;
+}
+
+.sct-tour-legend-tourists {
+  margin-left: 1px;
+  margin-bottom: 12px;
+
+  font-weight: 400;
+  font-size: 12px;
+  color: #000;
+}
+
+.sct-tour-input-tourists {
+  width: 121px;
+}
+
+
+/* ========================================================================
+   --------INPUT-----------------------------------------------------------
+   ======================================================================== */
+.sct-tour-input {
+  border: none;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+
+  max-width: 121px;
+
+  outline: none;
+}
+
+.sct-tour-input[type=number]::-webkit-inner-spin-button,
+.sct-tour-input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+  width: 15px;
+  height: 14px;
+}
+
+
+/* ========================================================================
+   --------КНОПКА "НАЙТИ"--------------------------------------------------
+   ======================================================================== */
+.sct-tour-btn {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--main-color);
+  padding: 13px 30px;
+  border: 1px groove var(--main-color);
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+
+/* ========================================================================
+   --------ЛИНИЯ-----------------------------------------------------------
+   ======================================================================== */
+.sct-tour-line {
+  width: 1px;
+  height: 50px;
+  
+  background: #E1E1E1;
+}
+
+
+/* ========================================================================
+   --------СЕКЦИЯ "КОНТАКТЫ"-----------------------------------------------
+   ======================================================================== */
+.sct-contacts {
+  padding-bottom: 19px;
+}
+
+.sct-contacts-heading {
+  margin-bottom: 26px;
+}
+
+.sct-contacts-content {
+  display: flex;
+  align-items: center;
+
+  padding: 44px 44px 46px 46px;
+
+  background: #FFFFFF;
+  border-radius: 15px;
+}
+
+
+/* ========================================================================
+   --------СПИСОК----------------------------------------------------------
+   ======================================================================== */
+.sct-contacts-list {
+  display: flex;
+
+  padding-right: 51px;
+
+  min-height: 528px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sct-contacts-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sct-contacts-h3 {
+  display: inline-block;
+  margin: 0;
+
+  font-weight: 700;
+  font-size: 20px;
+  color: #000;
+}
+
+.sct-contacts-adressbox {
+  display: inline-block;
+
+  min-width: 230px;
+}
+
+.sct-contacts-adress {
+  display: block;
+
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+}
+
+.sct-contacts-telbox {
+  display: inline-block;
+
+  min-width: 230px;
+}
+
+.sct-contacts-tel {
+  display: block;
+
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--main-color);
+}
+
+.sct-contacts-questionbox {
+  display: inline-block;
+  max-width: 230px;
+}
+
+.sct-contacts-question {
+  display: block;
+
+  font-weight: 400;
+  font-size: 16px;
+  color: #c4c4c4;
+}
+
+.sct-contacts-email {
+  color: var(--main-color);
+}
+
+.sct-contacts-time {
+  max-width: 200px;
+  word-break: break-all;
+
+  margin-right: 30px;
+
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+}
+
+.sct-contacts-line {
+  width: 375px;
+  height: 1px;
+  background-color: #c4c4c4;
+}
+
+.sct-contacts-btn {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--main-color);
+  padding: 27px 29px;
+  border: 1px solid var(--main-color);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+
+/* ========================================================================
+   --------ОФИС------------------------------------------------------------
+   ======================================================================== */
+.sct-contacts-img {
+  border-radius: 10px;
+}
+
+
+/* ========================================================================
+   --------ФУТЕР-----------------------------------------------------------
+   ======================================================================== */
+.footer {
+  padding-bottom: 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+
+  max-width: 1168px;
+
+  padding: 44px 51px 55px 52px;
+
+  background-color: #333;
+  border-radius: 15px;
+
+  background-image: url(../img/svg/footer/logo.svg);
+  background-repeat: no-repeat;
+  background-position-x: 738px;
+  background-position-y: 113px;
+}
+
+
+/* ========================================================================
+   --------ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ-------------------------------------
+   ======================================================================== */
+.footer-user {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  max-width: 320px;
+  height: 242px;
+}
+
+.footer-user-text1 {
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 190%;
+
+  color: #FFFFFF;
+}
+
+.footer-user-text2 {
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 190%;
+
+  color: #FFFFFF;
+}
+
+.footer-user-link {
+  display: inline;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 190%;
+
+  color: var(--main-color);
+}
+
+
+/* ========================================================================
+   --------КОНТАКТЫ--------------------------------------------------------
+   ======================================================================== */
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  max-width: 358px;
+  height: 171px;
+}
+
+.footer-contacts-adress {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 190%;
+
+  color: #FFFFFF;
+}
+
+.footer-contacts-telbox {
+  text-decoration: none;
+}
+
+.footer-contacts-tel {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 190%;
+
+  color: var(--main-color);
+}
+
+.footer-contacts-mailbox {
+  text-decoration: none;
+}
+
+.footer-contacts-mail {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 190%;
+
+  color: var(--main-color);
+}
+
+
+/* ========================================================================
+   --------СОЦ СЕТИ--------------------------------------------------------
+   ======================================================================== */
+.footer-socweb {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  max-width: 25px;
+  height: 205px;
+
+  margin-left: 158px;
+}
+
+.footer-socweb-icon {
+  width: 25px;
+  height: 25px;
+
+  opacity: 0.5;
+
+  background-repeat: no-repeat;
+}
+
+.footer-socweb-tripadvisor {
+  background-image: url(../img/svg/footer/tripadvisor.svg);
+}
+
+.footer-socweb-tweeter {
+  background-image: url(../img/svg/footer/twitter.svg);
+}
+
+.footer-socweb-facebook {
+  background-image: url(../img/svg/footer/facebook.svg);
+}
+
+.footer-socweb-vk {
+  background-image: url(../img/svg/footer/vk.svg);
+}
+
+.footer-socweb-instagram {
+  background-image: url(../img/svg/footer/instagram.svg);
+}

@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'MullerRegular';
+  src: url('../../fonts/MullerRegular.woff2') format('woff2'),
+    url('../../fonts/MullerRegular.woff') format('woff');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MullerBold';
+  src: url('../../fonts/MullerBold.woff2') format('woff2'),
+    url('../../fonts/MullerBold.woff') format('woff');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 1199px;
+  height: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.back {
+  font-family: "MullerRegular";
+  font-size: 20px;
+  color: #cc9933;
+  text-decoration: none;
+}
+
+.sct-hero {
+  padding-top: 70px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.h1 {
+  font-family: "MullerBold";
+  font-size: 110px;
+  margin-bottom: 30px;
+}
+
+.text {
+  font-family: "MullerRegular";
+  font-size: 24px;
+}
+
+.img {
+  width: 500px;
+  margin-top: 64px;
+
+  filter: sepia(100) saturate(3.8);
+}
+
